@@ -1,7 +1,8 @@
 # City-Builder
-  -Procedural generated city using Threejs
-  -Each city is new and unique
-  -Allows for changing of variables
-  -No collison detection used, which sometimes creates a nice unique effect
+ A procedural generated city that include variables for changing the city is built. Each buildings is give a random height as well as 
+ texture for a more interesting effect. No collision detection is used to save expense ,and to make an interesting merge effect of 
+ diffferent geometries.
+  
 #Uses threejs controller
-  -must use tab to change variables in webpage
+Must use tab to change build variables. Feel free to adjust and see how everthying works.
+
