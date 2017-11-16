@@ -4,5 +4,5 @@
  diffferent geometries.
   
 ##Uses threejs controller
-	Must use tab to change build variables. Feel free to adjust and see how everthying works.
+Must use tab to change build variables. Feel free to adjust and see how everthying works.
 
