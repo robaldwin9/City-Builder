@@ -1,0 +1,94 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title>City Builder</title>
+		<link href="css/city.css" rel="stylesheet" type="text/css">
+		<script src = "https://threejs.org/build/three.js"> </script>
+		<script src = "js/TrackballControls.js"> </script>
+		<script src = "js/cityBuilder.js"> </script>
+		<script>
+
+		var textures = ['Textures/buildTexture.jpg', 'Textures/buildTexture2.jpg', 'Textures/buildTexture3.jpg',
+		 'Textures/buildTexture4.jpg', 'Textures/buildTexture5.jpg', 'Textures/buildTexture6.jpg', 'Textures/buildTexture7.jpg',
+		 'Textures/buildTexture8.jpg', 'Textures/buildTexture9.jpg'];
+
+
+		function start()
+		{
+			document.getElementById('numBuildings').value = buildCity.numBuildings
+			document.getElementById('minHeight').value = buildCity.minHeight;
+			document.getElementById('maxHeight').value = buildCity.maxHeight;
+				document.getElementById('xSpacing').value = buildCity.buildingXSpacing;
+				document.getElementById('zSpacing').value = buildCity.buildingZSpacing;
+				document.getElementById('cityWidth').value = buildCity.cityWidth;
+				buildCity.init();
+				buildCity.create(buildCity.numBuildings,buildCity.minHeight,
+					buildCity.maxHeight,buildCity.buildingXSpacing, buildCity.buildingZSpacing, buildCity.cityWidth, textures);
+
+			window.addEventListener('onresize',
+				function()
+				{
+					buildCity.camera.aspect = window.innerWidth / window.innerHeght;
+					camera.updatProjectionMatrix();
+					buildCity.renderer.setSize(window.innerWidth, window.innerHeight)
+				});
+
+
+
+		}
+		function newCity()
+		{
+			 buildCity.numBuildings = parseInt(document.getElementById('numBuildings').value);
+		   buildCity.minHeight =	parseInt(document.getElementById('minHeight').value);
+			 buildCity.maxHeight = parseInt(document.getElementById('maxHeight').value);
+			 buildCity.buildingXSpacing = parseInt(document.getElementById('xSpacing').value);
+			 buildCity.buildZSpacing = parseInt(document.getElementById('zSpacing').value);
+				buildCity.cityWidth = parseInt(document.getElementById('cityWidth').value);
+				document.getElementById('infoWrap').style.display = 'none';
+				buildCity.clear();
+				buildCity.create(buildCity.numBuildings,buildCity.minHeight,
+					buildCity.maxHeight,buildCity.buildingXSpacing, buildCity.buildingZSpacing, buildCity.cityWidth, textures);
+		}
+		</script>
+	</head>
+
+	<body onload = "start();">
+		<div id = "infoWrap">
+			<article class = "post">
+
+
+		<div class = "card">
+			<h3>	A webpage utilizing threejs to make procedurally generated cities. </h3>
+
+				<ul>
+					<li>Num Buildings: the number of randomly generated buildings</li>
+					<li>Min height: minimum height a building may possess</li>
+					<li>Max height: maximum height a building may have</li>
+					<li>BuildingXpacing: the amount of units in x direction between each pair of buildings</li>
+					<li>Building Z spacing: the number of units each building row is set apart</li>
+					<li>CityWidth: how spread out the city is in the X direction 20 means city falls inbetween
+						-20 and 20 x units</li>
+						<li>Images from: <a href = "http://texturer.com/sub29/">texturer.com </a>
+				</ul>
+
+		</div>
+		</article>
+</div>
+
+		<div class = "selector">
+			<ul>
+					<li>Num Buildings: <input type="text" class="box" id = "numBuildings"> </li>
+					<li>Min Height: <input class="box"  id = "minHeight" value = "">  </li>
+					<li>Max Height: <input class="box" id = "maxHeight">  </li>
+					<li>Building X Spacing: <input class="box" id = "xSpacing"> </li>
+					<li>Building Z Spacing: <input class="box" id ="zSpacing"> </li>
+					<li>City Width: <input class="box" id ="cityWidth">  </li>
+					<li><button onclick= "newCity();">Create</button></li>
+			</ul>
+				</div>
+
+			<div id ="city"> </div>
+
+
+	</body>
+</html>
