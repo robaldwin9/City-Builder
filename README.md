@@ -3,6 +3,6 @@
  texture for a more interesting effect. No collision detection is used to save expense ,and to make an interesting merge effect of 
  diffferent geometries.
   
-#Uses threejs controller
-Must use tab to change build variables. Feel free to adjust and see how everthying works.
+##Uses threejs controller
+	Must use tab to change build variables. Feel free to adjust and see how everthying works.
 
