@@ -160,7 +160,8 @@ getRandCylinderMesh: function()
 
 	geom = new THREE.CylinderGeometry(radius,radius, height, segments);
 	materials.push(new THREE.MeshLambertMaterial({map:  new THREE.TextureLoader().load(buildCity.textures[index])}));
-	materials.push(new THREE.MeshLambertMaterial({map: new THREE.TextureLoader().load("Textures/roof.jpg")}));
+	materials.push(new THREE.MeshLambertMaterial({map: new THREE.TextureLoader()
+			.load("https://cdn.todoprogramming.org/threejscity/roof.jpg")}));
 	mesh = new THREE.Mesh(geom, materials);
 	mesh.position.y = height/2;
 
