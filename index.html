@@ -8,15 +8,19 @@
 		<script src = "js/cityBuilder.js"> </script>
 		<script>
 
-			const textures = ['https://cdn.todoprogramming.org/threejscity/buildTexture.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture2.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture3.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture4.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture5.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture6.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture7.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture8.jpg',
-				'https://cdn.todoprogramming.org/threejscity/buildTexture9.jpg'];
+			const CDN = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+				? 'http://localhost:8787'
+				: 'https://cdn.todoprogramming.org';
+
+			const textures = [CDN + '/threejscity/buildTexture.jpg',
+				CDN + '/threejscity/buildTexture2.jpg',
+				CDN + '/threejscity/buildTexture3.jpg',
+				CDN + '/threejscity/buildTexture4.jpg',
+				CDN + '/threejscity/buildTexture5.jpg',
+				CDN + '/threejscity/buildTexture6.jpg',
+				CDN + '/threejscity/buildTexture7.jpg',
+				CDN + '/threejscity/buildTexture8.jpg',
+				CDN + '/threejscity/buildTexture9.jpg'];
 
 			function start()
 		{
@@ -44,7 +48,7 @@
 		   buildCity.minHeight =	parseInt(document.getElementById('minHeight').value);
 			 buildCity.maxHeight = parseInt(document.getElementById('maxHeight').value);
 			 buildCity.buildingXSpacing = parseInt(document.getElementById('xSpacing').value);
-			 buildCity.buildZSpacing = parseInt(document.getElementById('zSpacing').value);
+			 buildCity.buildingZSpacing = parseInt(document.getElementById('zSpacing').value);
 				buildCity.cityWidth = parseInt(document.getElementById('cityWidth').value);
 				document.getElementById('infoWrap').style.display = 'none';
 				buildCity.clear();

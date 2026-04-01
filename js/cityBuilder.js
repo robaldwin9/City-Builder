@@ -51,7 +51,7 @@ clear: function()
 //initialize user scene movement
 initControler: function()
 {
-	buildCity.controls = new THREE.TrackballControls( buildCity.camera );
+	buildCity.controls = new THREE.TrackballControls( buildCity.camera, buildCity.renderer.domElement );
 
 	buildCity.controls.rotateSpeed = 1.0;
 	buildCity.controls.zoomSpeed = 1.2;
@@ -78,7 +78,7 @@ getRandBoxMesh: function()
 	var index = Math.floor(Math.random() * parseInt(buildCity.textures.length))
 	var texturLoader = new THREE.TextureLoader();
 	var texture = texturLoader.load(buildCity.textures[index])
-	var topTexture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/roof.jpg")
+	var topTexture = texturLoader.load(CDN + "/threejscity/roof.jpg")
 	var materials = [
 		new THREE.MeshLambertMaterial({map: texture }),
 		new THREE.MeshLambertMaterial({map: texture }),
@@ -161,7 +161,7 @@ getRandCylinderMesh: function()
 	geom = new THREE.CylinderGeometry(radius,radius, height, segments);
 	materials.push(new THREE.MeshLambertMaterial({map:  new THREE.TextureLoader().load(buildCity.textures[index])}));
 	materials.push(new THREE.MeshLambertMaterial({map: new THREE.TextureLoader()
-			.load("https://cdn.todoprogramming.org/threejscity/roof.jpg")}));
+			.load(CDN + "/threejscity/roof.jpg")}));
 	mesh = new THREE.Mesh(geom, materials);
 	mesh.position.y = height/2;
 
@@ -173,20 +173,20 @@ generateSkyBox: function()
 {
 	var geom = new THREE.BoxGeometry(500,500,500,1,1,1)
 	var texturLoader = new THREE.TextureLoader();
-	var texture = texturLoader.load("https://cdn.todoprogramming.org/sky.jpg")
+	var texture = texturLoader.load(CDN + "/sky.jpg")
 	materials = []
 	var material = new THREE.MeshBasicMaterial({map: texture,side: THREE.DoubleSide});
 
 	for(var i = 0; i< 3; i++)
 		materials.push(material);
 
-		texture = texturLoader.load("https://cdn.todoprogramming.org/desert.jpg")
+		texture = texturLoader.load(CDN + "/desert.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load("https://cdn.todoprogramming.org/sky.jpg")
+		texture = texturLoader.load(CDN + "/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load("https://cdn.todoprogramming.org/sky.jpg")
+		texture = texturLoader.load(CDN + "/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, });
 		materials.push(material)
 
