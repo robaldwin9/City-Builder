@@ -78,7 +78,7 @@ getRandBoxMesh: function()
 	var index = Math.floor(Math.random() * parseInt(buildCity.textures.length))
 	var texturLoader = new THREE.TextureLoader();
 	var texture = texturLoader.load(buildCity.textures[index])
-	var topTexture = texturLoader.load("Textures/roof.jpg")
+	var topTexture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/roof.jpg")
 	var materials = [
 		new THREE.MeshLambertMaterial({map: texture }),
 		new THREE.MeshLambertMaterial({map: texture }),
@@ -172,20 +172,20 @@ generateSkyBox: function()
 {
 	var geom = new THREE.BoxGeometry(500,500,500,1,1,1)
 	var texturLoader = new THREE.TextureLoader();
-	var texture = texturLoader.load("Textures/sky.jpg")
+	var texture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/sky.jpg")
 	materials = []
 	var material = new THREE.MeshBasicMaterial({map: texture,side: THREE.DoubleSide});
 
 	for(var i = 0; i< 3; i++)
 		materials.push(material);
 
-		texture = texturLoader.load("Textures/desert.jpg")
+		texture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/desert.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load("Textures/sky.jpg")
+		texture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load("Textures/sky.jpg")
+		texture = texturLoader.load("https://cdn.todoprogramming.org/threejscity/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, });
 		materials.push(material)
 
