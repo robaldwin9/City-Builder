@@ -1,19 +1,24 @@
 <!Doctype HTML>
-<html>
+<html lang="">
 	<head>
 		<title>City Builder</title>
 		<link href="css/city.css" rel="stylesheet" type="text/css">
-		<script src = "https://threejs.org/build/three.js"> </script>
+		<script src = "https://threejs.todoprogramming.org/threejs124/three.js"> </script>
 		<script src = "js/TrackballControls.js"> </script>
 		<script src = "js/cityBuilder.js"> </script>
 		<script>
 
-		var textures = ['Textures/buildTexture.jpg', 'Textures/buildTexture2.jpg', 'Textures/buildTexture3.jpg',
-		 'Textures/buildTexture4.jpg', 'Textures/buildTexture5.jpg', 'Textures/buildTexture6.jpg', 'Textures/buildTexture7.jpg',
-		 'Textures/buildTexture8.jpg', 'Textures/buildTexture9.jpg'];
+			const textures = ['https://cdn.todoprogramming.org/threejscity/buildTexture.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture2.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture3.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture4.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture5.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture6.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture7.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture8.jpg',
+				'https://cdn.todoprogramming.org/threejscity/buildTexture9.jpg'];
 
-
-		function start()
+			function start()
 		{
 			document.getElementById('numBuildings').value = buildCity.numBuildings
 			document.getElementById('minHeight').value = buildCity.minHeight;
@@ -32,9 +37,6 @@
 					camera.updatProjectionMatrix();
 					buildCity.renderer.setSize(window.innerWidth, window.innerHeight)
 				});
-
-
-
 		}
 		function newCity()
 		{
@@ -55,40 +57,34 @@
 	<body onload = "start();">
 		<div id = "infoWrap">
 			<article class = "post">
-
-
 		<div class = "card">
-			<h3>	A webpage utilizing threejs to make procedurally generated cities. </h3>
-
+			<h3> A webpage utilizing threejs to make procedurally generated cities. </h3>
 				<ul>
 					<li>Num Buildings: the number of randomly generated buildings</li>
 					<li>Min height: minimum height a building may possess</li>
 					<li>Max height: maximum height a building may have</li>
-					<li>BuildingXpacing: the amount of units in x direction between each pair of buildings</li>
+					<li>Building X spacing: the amount of units in x direction between each pair of buildings</li>
 					<li>Building Z spacing: the number of units each building row is set apart</li>
-					<li>CityWidth: how spread out the city is in the X direction 20 means city falls inbetween
+					<li>CityWidth: how spread out the city is in the X direction 20 means city falls in between
 						-20 and 20 x units</li>
-						<li>Images from: <a href = "http://texturer.com/sub29/">texturer.com </a>
+						<li>Images from: <a href = "https://texturer.com/sub29/">texturer.com </a>
 				</ul>
-
 		</div>
 		</article>
 </div>
 
 		<div class = "selector">
 			<ul>
-					<li>Num Buildings: <input type="text" class="box" id = "numBuildings"> </li>
-					<li>Min Height: <input class="box"  id = "minHeight" value = "">  </li>
-					<li>Max Height: <input class="box" id = "maxHeight">  </li>
-					<li>Building X Spacing: <input class="box" id = "xSpacing"> </li>
-					<li>Building Z Spacing: <input class="box" id ="zSpacing"> </li>
-					<li>City Width: <input class="box" id ="cityWidth">  </li>
+					<li>Num Buildings: <label for="numBuildings"></label><input type="text" class="box" id = "numBuildings"> </li>
+					<li>Min Height: <label for="minHeight"></label><input class="box" id = "minHeight" value = "">  </li>
+					<li>Max Height: <label for="maxHeight"></label><input class="box" id = "maxHeight">  </li>
+					<li>Building X Spacing: <label for="xSpacing"></label><input class="box" id = "xSpacing"> </li>
+					<li>Building Z Spacing: <label for="zSpacing"></label><input class="box" id ="zSpacing"> </li>
+					<li>City Width: <label for="cityWidth"></label><input class="box" id ="cityWidth">  </li>
 					<li><button onclick= "newCity();">Create</button></li>
 			</ul>
 				</div>
 
 			<div id ="city"> </div>
-
-
 	</body>
 </html>
