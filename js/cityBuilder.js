@@ -173,20 +173,20 @@ generateSkyBox: function()
 {
 	var geom = new THREE.BoxGeometry(500,500,500,1,1,1)
 	var texturLoader = new THREE.TextureLoader();
-	var texture = texturLoader.load(CDN + "/sky.jpg")
+	var texture = texturLoader.load(CDN + "/threejscity/sky.jpg")
 	materials = []
 	var material = new THREE.MeshBasicMaterial({map: texture,side: THREE.DoubleSide});
 
 	for(var i = 0; i< 3; i++)
 		materials.push(material);
 
-		texture = texturLoader.load(CDN + "/desert.jpg")
+		texture = texturLoader.load(CDN + "/threejscity/desert.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load(CDN + "/sky.jpg")
+		texture = texturLoader.load(CDN + "/threejscity/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide});
 		materials.push(material);
-		texture = texturLoader.load(CDN + "/sky.jpg")
+		texture = texturLoader.load(CDN + "/threejscity/sky.jpg")
 		material = new THREE.MeshBasicMaterial({map: texture, side: THREE.DoubleSide, });
 		materials.push(material)
 
